@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+}
+.board {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
+  justify-content: center;
+  align-content: center;
+  /* margin-top: 25px; */
+  justify-items: center;
+  align-items: center;
+}
+.cell {
+  border: 1px solid black;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* X Marker Style */
+.cell-x::before,
+.cell-x::after {
+  content: " ";
+  width: 15px;
+  height: 135px;
+  background-color: black;
+  position: absolute;
+}
+.cell-x::before {
+  transform: rotate(45deg);
+}
+.cell-x::after {
+  transform: rotate(-45deg);
+}
+
+/* Circle Marker Style */
+.circle::before {
+  content: " ";
+  width: 125px;
+  height: 125px;
+  background-color: black;
+  position: absolute;
+  border-radius: 50%;
+}
+.circle::after {
+  content: " ";
+  width: 102px;
+  height: 102px;
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Display not allowed if there is a marker in the cell*/
+.circle,
+.cell-x {
+  cursor: not-allowed;
+}
+/* Hover effect only if cell is not selected */
+.cell:not(.circle):not(.cell-x):hover {
+  background-color: lightgray;
+}
+
+/* Winning Message */
+.winning-message {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  /* display: flex; is going to change dinamically with .show class*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 7rem;
+}
+.winning-message button {
+  font-size: 3rem;
+  margin-top: 8px;
+  padding: 8px;
+  width: 250px;
+  border-radius: 6px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.winning-message button:hover {
+  background-color: black;
+  color: white;
+}
+.show {
+  display: flex;
+}
