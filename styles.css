@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-image: url("./image2.jpg");
+  background-image: url("./games.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -16,10 +16,12 @@ body {
   align-items: center;
 }
 h1 {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
   font-size: 3.5rem;
   font-variant: small-caps;
   grid-column: span 3;
-  padding: 0;
+  padding: 0 25px;
   border-bottom: 3px solid black;
 }
 .cell {
