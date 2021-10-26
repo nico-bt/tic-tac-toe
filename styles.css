@@ -1,5 +1,8 @@
 body {
   margin: 0;
+  background-image: url("./image2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .board {
   width: 100vw;
@@ -8,10 +11,16 @@ body {
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(3, auto);
   justify-content: center;
-  align-content: center;
-  /* margin-top: 25px; */
+  align-content: flex-start;
   justify-items: center;
   align-items: center;
+}
+h1 {
+  font-size: 3.5rem;
+  font-variant: small-caps;
+  grid-column: span 3;
+  padding: 0;
+  border-bottom: 3px solid black;
 }
 .cell {
   border: 1px solid black;
@@ -21,6 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background-color: white;
 }
 
 /* X Marker Style */
